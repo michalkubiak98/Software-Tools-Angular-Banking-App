@@ -1,0 +1,35 @@
+//This is where we put global styles and change variable values
+
+//import fonts from google
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+
+$turquoise: #44ddd0;
+$green: #27d7a1;
+$light-green: #45f69e;
+$dark-green: rgb(0,100,80);
+
+$white: #ffffff;
+$light: rgb(247, 247, 247);
+
+//update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $green;
+
+$link: $light-green;
+
+//update Bulma's component variables
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+//set custom global styles to the whole app
+
+html {
+    background: linear-gradient(to right top, $turquoise, $green);
+}
+
+html, body {
+    height: 100%;
+}
+
