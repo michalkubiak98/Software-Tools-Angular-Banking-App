@@ -9,8 +9,7 @@ const TransactionSchema = new mongoose.Schema({
         type: String
     },
     date: {
-        type: Date,
-        default: Date.now
+        type: String
     },
     type: {
         type: String
@@ -24,6 +23,7 @@ const TransactionSchema = new mongoose.Schema({
     // Then after update customer's balance
 })
 
-module.exports = mongoose.model('Transaction', TransactionSchema)
+const Transaction = mongoose.model('Transaction', TransactionSchema)
+module.exports = { Transaction }
 
 

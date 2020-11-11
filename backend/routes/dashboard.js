@@ -61,11 +61,6 @@ router.post('/', async (req, res, next) => {
 })
 
 
-// Get customer transactions table
-router.get('/transactions', (req,res) => {
-    res.send('transactions')
-})
-
 // Get Customer Balance
 router.get('/balance', (req,res) => {
     res.send('balance')

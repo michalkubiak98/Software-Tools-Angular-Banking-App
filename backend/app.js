@@ -33,6 +33,8 @@ if (process.env.NODE_ENV === 'development') {
 // Dash routes
 app.use('/dashboard', require('./routes/dashboard'))
 
+app.use('/transactions', require('./routes/transactions'))
+
 app.use('/cards', require('./routes/cards'))
 
 const PORT = process.env.PORT || 3000

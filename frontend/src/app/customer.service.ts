@@ -39,4 +39,18 @@ export class CustomerService {
     return this.webReqService.get('cards')
   }
 
+
+
+  createNewTransaction(customerId: string, title: string, date: string, type: string, amount: number, inOut: string){
+    // send web request to create a customer
+    return this.webReqService.post('transactions', {
+      customerId, title, date, type, amount, inOut
+     })
+  }
+
+
+  getTransactions() {
+    return this.webReqService.get('transactions')
+  }
+
 }
