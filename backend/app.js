@@ -30,10 +30,10 @@ if (process.env.NODE_ENV === 'development') {
 
 
 
-// Login routes
-app.use('/', require('./routes/login'))
 // Dash routes
 app.use('/dashboard', require('./routes/dashboard'))
+
+app.use('/cards', require('./routes/cards'))
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))

@@ -5,13 +5,13 @@
                 Banking
             </h1>
             <div class="list-menu">
-                <a class="list-menu-item is-active">
+                <a href="dashboard" class="list-menu-item is-active">
                     <p>Overview</p>
                 </a>
-                <a class="list-menu-item">
+                <a href="cards"class="list-menu-item ">
                     <p>Cards</p>
                 </a>
-                <a class="list-menu-item">
+                <a href="transactions" class="list-menu-item">
                     <p>Transactions</p>
                 </a>
                 <a class="list-menu-item">
@@ -21,13 +21,61 @@
                     <p>Direct Debits</p>
                 </a>
             </div>
-            <button class="button is-primary has-text-white" (click)="createNewCustomer()">New Customer</button>
+            <!-- Button to Add Customer (test)-->
+            
         </div>
         <div class="main">
             <h1 class="title has-text-primary">
-                Main
+                Customer Information
             </h1>
+
+            <!-- Customer Information-->
+            <div class="info" *ngFor="let customer of customers" > 
+                <p class="info-item infoTitle"> 
+                    {{ customer.firstName }} {{ customer.lastName }}                     
+                </p>
+
+                <p class="info-item"> 
+                    Date of Birth:  {{ customer.dateOfBirth }}                    
+                </p>
+
+                <h3 class="infoTitle">Address</h3>
+
+                <p class="info-item"> 
+                    {{ customer.street }}                    
+                </p>
+                <p class="info-item"> 
+                    {{ customer.town }}                    
+                </p>
+                <p class="info-item"> 
+                    {{ customer.county }}                    
+                </p>               
+
+                <h3 class="infoTitle">Email</h3>
+                
+                <p class="info-item"> 
+                    {{ customer.email }}                    
+                </p>
+
+                <h3 class="infoTitle">Registration No and Passcode</h3>
+                
+                <p class="info-item"> 
+                    Reg. No. {{ customer.regNo }}                    
+                </p>
+                <p class="info-item"> 
+                   Passcode: {{ customer.passcode }}                    
+                </p>
+
+                <h3 class="infoTitle">Balance</h3>
+                
+                <p class="info-item"> 
+                    {{ customer.balance }}                    
+                </p>
+            </div>
+            
           
         </div>
+
+        
     </div>
 </div>

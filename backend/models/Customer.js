@@ -4,11 +4,7 @@ const CustomerSchema = new mongoose.Schema({
 
     firstName: {
         type: String
-    },
-    secondName: {
-        type: String
-    }
-    /* 
+    },    
     lastName: {
         type: String
     },
@@ -22,7 +18,7 @@ const CustomerSchema = new mongoose.Schema({
         type: String
     },
     dateOfBirth: {
-        type: Date
+        type: String
     },
     email: {
         type: String
@@ -35,7 +31,7 @@ const CustomerSchema = new mongoose.Schema({
     },
     balance: {
         type: Number
-    } */
+    } 
 })
 
 const Customer = mongoose.model('Customer', CustomerSchema)

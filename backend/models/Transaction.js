@@ -1,18 +1,19 @@
-/* const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 const TransactionSchema = new mongoose.Schema({
 
-    customer: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Customer'
+    customerId: {
+        type: String
+    },
+    title: {
+        type: String
     },
     date: {
         type: Date,
         default: Date.now
     },
     type: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'TransactionType'
+        type: String
     },
     amount: {
         type: Number
@@ -26,4 +27,3 @@ const TransactionSchema = new mongoose.Schema({
 module.exports = mongoose.model('Transaction', TransactionSchema)
 
 
-*/

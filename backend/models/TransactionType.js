@@ -1,4 +1,4 @@
-/* const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 const TransactionTypeSchema = new mongoose.Schema({
 
@@ -10,4 +10,3 @@ const TransactionTypeSchema = new mongoose.Schema({
 module.exports = mongoose.model('TransactionType', TransactionTypeSchema)
 
 
-*/

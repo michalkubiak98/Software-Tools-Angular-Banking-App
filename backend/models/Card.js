@@ -1,25 +1,27 @@
-/* const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
 const CardSchema = new mongoose.Schema({
 
     cardNo: {
         type: Number
     },
-    customer: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Customer'
+    customerId: {
+        type: String
     },
     expiry: {
-        type: Date
+        type: String
+    },
+    status: {
+        type: String
     },
     cvv: {
         type: Number
     },
-    status: {
-        type: String
+    pincode: {
+        type: Number
     }
 })
 
-module.exports = mongoose.model('Card', CardSchema)
+const Card = mongoose.model('Card', CardSchema)
+module.exports = { Card }
 
-*/

@@ -3,36 +3,63 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 
 // Bring in all models (exported from an index file)
-const { Customer } = require('../models')
+const { Customer, Card, Transaction, TransactionType } = require('../models')
 
 
 // TEST - after testing frontend connection to the backend this displays the Customer objects on /dashboard
-router.get('/', (req, res, next) => {
-    Customer.find({}).then((customers) => {
-        res.send(customers)
-    })
+router.get('/', async (req, res) => {
+
+
+    try {
+        await Customer.find({
+  
+            //specific find conditions
+            //find customers with a user id that matches the authenticate() function in appjs
+            
+            
+            //_userId: req.user_id
+  
+  
+        }).then((customers) => {
+            //send the customers data
+            res.send(customers)
+        })
+    }
+    catch (err){
+        console.log(err)
+    }
+
 })
-router.post('/', (req, res, next) => {
-    //body parser lets us use req.body. whatever
-    const firstName = req.body.firstName
-    const secondName = req.body.secondName
 
-    const newCustomer = new Customer({
-        firstName,
-        secondName
-    })
 
-    newCustomer.save().then((customerDoc) => {
-        res.send(customerDoc)
-    })
+router.post('/', async (req, res, next) => {
+
+    try {
+        const firstName = req.body.firstName
+        const lastName = req.body.lastName
+        const street = req.body.street
+        const town = req.body.town
+        const county = req.body.county
+        const dateOfBirth = req.body.dateOfBirth
+        const email = req.body.email
+        const regNo = req.body.regNo
+        const passcode = req.body.passcode
+        const balance = req.body.balance
+
+
+        const newCustomer = new Customer({firstName, lastName, street,
+            town, county, dateOfBirth, email, regNo, passcode, balance
+        })
+
+        await newCustomer.save().then((customerDoc) => {
+            res.send(customerDoc)
+        })
+    }
+    catch (err){
+        console.log(err)
+    }
 })
 
-
-
-// Get customer Cards
-router.get('/cards', (req,res) => {
-    res.send('cards')
-})
 
 // Get customer transactions table
 router.get('/transactions', (req,res) => {
